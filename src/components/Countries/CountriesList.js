@@ -23,12 +23,15 @@ class CountriesList extends Component {
       isLoading: false,
       loadNumber: 15,
       modalVisible: false,
-      modalCountry: {}
+      modalCountry: {},
+      showWebView: false
     };
   }
 
   showMore = () => {
-    this.setState({ loadNumber: (this.state.loadNumber += 20) });
+    this.setState({
+      loadNumber: (this.state.loadNumber += 20)
+    });
   };
 
   handleSearch = text => {
@@ -46,14 +49,13 @@ class CountriesList extends Component {
 
   onClose = () => {
     const { modalVisible } = this.state;
-    this.setState({ modalVisible: !modalVisible });
+    this.setState({ modalVisible: !modalVisible, showWebView: false });
   };
 
   render() {
     const { isLoading, modalCountry, modalVisible, loadNumber } = this.state;
 
     const { query } = this.props;
-
     let filteredCountries = countries.filter(country => {
       return country.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
     });

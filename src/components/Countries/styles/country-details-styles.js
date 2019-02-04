@@ -13,6 +13,14 @@ export const CountryName = Animatable.createAnimatableComponent(styled.Text`
   text-align: center;
 `);
 
+export const WebViewer = styled.WebView`
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: -20px;
+`;
+
 export const ModalFlag = Animatable.createAnimatableComponent(styled.Image`
   height: 100px;
   width: 150px;
