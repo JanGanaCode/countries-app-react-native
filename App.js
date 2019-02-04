@@ -7,9 +7,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {Platform.OS === 'ios' && (
-          <StatusBar backgroundColor='#3d9dff' barStyle='light-content' />
-        )}
+        <StatusBar backgroundColor='#3d9dff' barStyle='light-content' />
         <AppNavigator />
         <OfflineNotice />
       </View>

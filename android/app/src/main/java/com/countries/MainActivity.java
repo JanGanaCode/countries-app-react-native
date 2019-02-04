@@ -18,20 +18,4 @@ public class MainActivity extends ReactActivity {
         return "Countries";
     }
 
-    public LinearLayout createSplashLayout(){
-      LinearLayout view = new LinearLayout(this);
-
-      TextView textView = new TextView(this);
-
-      view.setBackgroundColor(Color.parseColor("#ffffff"));
-      view.setGravity(Gravity.CENTER);
-
-      textView.setTextColor(Color.parseColor("#3d9dff"));
-      textView.setText("Countries");
-      textView.setGravity(Gravity.CENTER);
-      textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 40);
-
-      view.addView(textView);
-      return view;
-    }
 }
