@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { StatusBar, StyleSheet, View } from 'react-native';
 import AppNavigator from './src/navigation/AppNavigator';
-import OfflineNotice from './src/components/OfflineNotice/OfflineNotice';
 
 export default class App extends Component {
   render() {
@@ -9,7 +8,6 @@ export default class App extends Component {
       <View style={styles.container}>
         <StatusBar backgroundColor='#3d9dff' barStyle='light-content' />
         <AppNavigator />
-        <OfflineNotice />
       </View>
     );
   }

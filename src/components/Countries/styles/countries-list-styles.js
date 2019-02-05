@@ -46,15 +46,6 @@ export const CountryWrapper = Animatable.createAnimatableComponent(styled.View`
   align-items: center;
 `);
 
-export const Flag = styled.Image`
-  height: 50;
-  width: 50;
-  margin: 0 10px;
-  border-radius: 25;
-  border-color: #f2f2f3;
-  border-width: 1;
-`;
-
 export const CountryName = styled.Text`
   margin: 0 10px;
   color: #a2a6b4;

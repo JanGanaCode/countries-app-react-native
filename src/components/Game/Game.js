@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { StyleSheet } from 'react-native';
 import { countries } from './../../data/countries';
 import GameResult from './GameResult';
 import SelectResult from './SelectResult';
 import RightResult from './RightResult';
 import WrongResult from './WrongResult';
+import Flags from './../Countries/Flags';
 import {
   GameWrapper,
-  Flag,
   OptionsWrapper,
   Option,
   OptionLabel
@@ -116,13 +117,9 @@ class Game extends Component {
     if (quizProgress < 11) {
       return (
         <GameWrapper>
-          <Flag
-            animation='fadeIn'
-            delay={200}
-            duration={600}
-            source={{
-              uri: `https://jangana.com/apps-assets/flags/${currentFlag}.png`
-            }}
+          <Flags
+            flagStyle={styles.flagStyle}
+            item={{ alpha2Code: currentFlag }}
           />
           <OptionsWrapper>
             {options.map((option, index) => {
@@ -181,5 +178,20 @@ class Game extends Component {
     return <GameResult resetQuiz={this.resetQuiz} score={score} />;
   }
 }
+
+const styles = StyleSheet.create({
+  flagStyle: {
+    flex: 1,
+    width: 150,
+    height: 80,
+    marginTop: 20,
+    marginBottom: 20,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    borderRadius: 5,
+    borderWidth: 10,
+    borderColor: '#fff'
+  }
+});
 
 export default Game;
