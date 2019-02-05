@@ -7,13 +7,17 @@ import {
   CountryName,
   DetailsWrapper,
   Detail,
-  DetailLabel,
+  DetailLabel
 } from './styles/country-details-styles';
 
 class CountryDetails extends Component {
   handleOnBackdropPress = () => {
     this.setState({ showWebView: false });
     this.props.onClose();
+  };
+
+  handleModalSwipe = () => {
+    this.handleOnBackdropPress();
   };
 
   render() {
@@ -25,6 +29,10 @@ class CountryDetails extends Component {
         backdropOpacity={1}
         backdropColor='#3d9dff'
         onBackdropPress={this.handleOnBackdropPress}
+        onSwipe={this.handleModalSwipe}
+        swipeDirection='left'
+        hideModalContentWhileAnimating={true}
+        swipeThreshold={5}
       >
         <ModalInner>
           <CountryName animation='zoomIn' duration={700} delay={300}>
