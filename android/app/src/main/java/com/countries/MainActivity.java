@@ -1,4 +1,4 @@
-package com.countries;
+package com.jangana.reactcountriesapp;
 
 import com.facebook.react.ReactActivity;
 import android.widget.LinearLayout;

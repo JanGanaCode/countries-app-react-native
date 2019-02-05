@@ -5,6 +5,7 @@ import {
   SearchBarWrapper,
   SearchBar
 } from './../components/Countries/styles/header-searchbar-styles';
+import images from './../assets/images/images';
 
 class CountriesScreen extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class CountriesScreen extends Component {
     return (
       <SafeAreaView>
         <ScrollView>
-          <CountriesList query={query} />
+          <CountriesList query={query} source={images[this.props.image]} />
         </ScrollView>
       </SafeAreaView>
     );

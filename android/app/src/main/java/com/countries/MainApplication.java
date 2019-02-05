@@ -1,4 +1,4 @@
-package com.countries;
+package com.jangana.reactcountriesapp;
 
 import android.app.Application;
 
