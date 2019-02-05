@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { StyleSheet } from 'react-native';
 import { countries } from './../../data/countries';
 import CountryDetails from './CountryDetails';
+import Flags from './Flags';
 import {
   CountriesListWrapper,
   LoadingWrapper,
@@ -83,13 +85,7 @@ class CountriesList extends Component {
               duration={900}
               delay={item.delay}
             >
-              <Flag
-                source={{
-                  uri: `https://www.jangana.com/apps-assets/flags/${
-                    item.alpha2Code
-                  }.png`
-                }}
-              />
+              <Flags item={item} flagStyle={styles.flagStyle} />
               <CountryName>{item.name}</CountryName>
               <ModalOpenerWrapper
                 onPress={() => {
@@ -112,5 +108,17 @@ class CountriesList extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  flagStyle: {
+    height: 50,
+    width: 50,
+    marginLeft: 10,
+    marginRight: 10,
+    borderRadius: 25,
+    borderColor: '#f2f2f3',
+    borderWidth: 1
+  }
+});
 
 export default CountriesList;
